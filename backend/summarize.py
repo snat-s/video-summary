@@ -1,4 +1,4 @@
-}import sys
+import sys
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import nltk
 nltk.download('punkt')
