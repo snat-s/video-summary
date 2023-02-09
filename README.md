@@ -18,3 +18,4 @@ Now, we can use any summarization model synthesize the information.
 - [ ] Add a lot more documentation
   - [ ] Documentation for the frontend
   - [ ] Documentation for the python_pypeline
+- [ ] Add a requirements.txt
