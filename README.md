@@ -21,8 +21,8 @@ https://user-images.githubusercontent.com/65375294/217711577-ccdaae43-8e50-4fac-
 
 # TODOs
 
-- [X] Create a minimal frontend
+- [x] Create a minimal frontend
 - [ ] Add a lot more documentation
   - [ ] Documentation for the frontend
   - [ ] Documentation for the python_pypeline
-- [ ] Add a requirements.txt
+- [x] Add a requirements.txt
