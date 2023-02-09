@@ -3,17 +3,18 @@
 Make a video summary with AI.
 
 Thanks to Whisper from OpenAI you can have transcription of videos.
-With the script of a video we can process it with a different AI to create a
-summary.
+Now, we can use any summarization model synthesize the information.
 
 # How does it work?
 
-1. Pass the video to a .mp3
+1. Download the video with `yt-dlp`
 2. Let Whisper transcribe the video.
 3. Summarize with distilbart
 4. Output everything to a .txt file
 
 # TODOs
-- [ ] Create a minimal Flask backend
-- [ ] Create a minimal frontend
+
+- [X] Create a minimal frontend
 - [ ] Add a lot more documentation
+  - [ ] Documentation for the frontend
+  - [ ] Documentation for the python_pypeline

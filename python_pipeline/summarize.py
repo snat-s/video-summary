@@ -8,15 +8,17 @@ checkpoint = "sshleifer/distilbart-cnn-12-6"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint)
 
-def summarize(text_name):
+def summarize(text_name, isLookingForDebug=False):
     with open(text_name, "r") as f:
         texto = f.read()
 
+    if isLookingForDebug:
+        print(texto)
 
     sentences = nltk.tokenize.sent_tokenize(texto)
 
     #print(summarizer.model_max_length )
-    print(max([len(tokenizer.tokenize(sentence)) for sentence in sentences]))
+    #print(max([len(tokenizer.tokenize(sentence)) for sentence in sentences]))
 
     # create chunks
     # initialize
@@ -46,15 +48,16 @@ def summarize(text_name):
         # take care of the overflow sentence
         chunk += sentence + " "
         length = len(tokenizer.tokenize(sentence))
-    print(len(chunks))
+    #print(len(chunks))
 
     # inputs to the model
     inputs = [tokenizer(chunk, return_tensors="pt") for chunk in chunks]
 
     summary = []
     for input in inputs:
-      output = model.generate(**input)
-      summary.append(tokenizer.decode(*output, skip_special_tokens=True))
+        if not isLookingForDebug:
+            output = model.generate(**input)
+            summary.append(tokenizer.decode(*output, skip_special_tokens=True))
 
     return summary
 

@@ -2,8 +2,8 @@ import whisper
 import sys
 
 def transcribe(audio_file):
-
-    model = whisper.load_model("base")
+    # Change this if you do not have a potato for computer.
+    model = whisper.load_model("tiny")
     result = model.transcribe(audio_file)
 
     #print(result["text"])
